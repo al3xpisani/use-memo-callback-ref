@@ -30,23 +30,7 @@ reconciliation algorithm is designed to be optimized and
 using memo in small components may increase bottleneck
 ------------------------------------------------------
 
-When use useCallback
-
-Lets understand shallow compare first of all.
-i.e. We have on <Item title={xxxx}>
-
-Shallow compare algorithm checks if the old_Title 
-is strict equally === to the new_Title.
-
-if yes, it returns false. It cancells the rendering.
-
-React docs says : 
-shallowCompare performs a shallow equality check on 
-the current props and nextProps objects 
-as well as the current state and nextState objects.
-
-
-All the items were renderized because the Add to WishList button reference changes every time a new item is added. 
+                            All the items were renderized because the Add to WishList button reference changes every time a new item is added. 
 Everytime a new item is added , the function will be recreated and a new reference will do the  logic render.
 This is rendered again because one property has changed (the addToWishList passed as props in the button.
 
@@ -65,6 +49,11 @@ Callback is a way to tell react memorize the exsting function reference and not 
 
 See the difference below. No items were rendered even typing in the inputText and set value on it.
 useCallback memoized the function reference and did not render.
+
+
+
+![image](https://user-images.githubusercontent.com/14879580/123462447-b9a57e80-d5c0-11eb-819e-9d999d0d116a.png)
+
 
 
 
