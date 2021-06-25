@@ -30,7 +30,7 @@ reconciliation algorithm is designed to be optimized and
 using memo in small components may increase bottleneck
 ------------------------------------------------------
 
-                            All the items were renderized because the Add to WishList button reference changes every time a new item is added. 
+All the items were renderized because the Add to WishList button reference changes every time a new item is added. 
 Everytime a new item is added , the function will be recreated and a new reference will do the  logic render.
 This is rendered again because one property has changed (the addToWishList passed as props in the button.
 
